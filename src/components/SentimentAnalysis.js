@@ -42,7 +42,7 @@ class SentimentAnalysis extends Component {
             await axios.post("https://nlp-api21.herokuapp.com/sentiment", {text: this.state.text})
                 .then(res => {
                     console.log(res);
-                    let pred = res.data.prediction;
+                    let pred = res.data.prediction *100;
                     this.setState({result: pred})
                 })
                 .catch(err => {
